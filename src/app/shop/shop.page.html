@@ -1,0 +1,232 @@
+<ion-header>
+  <ion-toolbar class="toolbar">
+    <ion-title>
+      <ion-searchbar placeholder="crossbody bag" debounce="500"></ion-searchbar>
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name="cart-outline"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon slot="icon-only" name="menu-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="offer-banner">
+    <div class="offer-item">Free shipping on orders S$0.1+</div>
+    <div class="offer-item">S$0.5 off on orders over</div>
+    <ion-button class="offer-button" color="danger">New customer Claim all</ion-button>
+  </div>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>New customer offer</ion-card-title>
+    </ion-card-header>
+    <ion-grid>
+      <ion-row>
+        <ion-col *ngFor="let item of newCustomerOffers" size="3">
+          <ion-card class="individual-cards">
+            <img [src]="item.image" alt="{{item.title}}">
+            <ion-card-content>
+              <p>{{ item.price }}</p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Flash sale</ion-card-title>
+      <ion-badge id="timer">
+        <span id="hour">24</span>
+        <p id="colon">:</p>
+        <span id="minute">00</span>
+        <p id="colon">:</p>
+        <span id="second">00</span>
+      </ion-badge>
+    </ion-card-header>
+    <ion-grid>
+      <ion-row>
+        <ion-col *ngFor="let item of flashSales" size="3">
+          <ion-card class="individual-cards">
+            <img [src]="item.image" alt="{{item.title}}">
+            <ion-card-content>
+              <p>{{ item.price }}</p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+
+  <ion-scroll>
+    <ion-segment [(ngModel)]="selectedSegment" color="primary" scrollable>
+      <ion-segment-button value="all">
+        <ion-label>All</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="beauty">
+        <ion-label>Beauty</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="toys">
+        <ion-label>Toys</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="jewelry">
+        <ion-label>Jewelry</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="food">
+        <ion-label>Food</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="household">
+        <ion-label>Household</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="entertainment">
+        <ion-label>Entertainment</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="accessories">
+        <ion-label>Accessories</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="electronics">
+        <ion-label>Electronics</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="womenswear">
+        <ion-label>Womenswear</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="health">
+        <ion-label>Health</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="bags">
+        <ion-label>Bags</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="textiles">
+        <ion-label>Textiles</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="office">
+        <ion-label>Office</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="kitchen">
+        <ion-label>Kitchen</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="muslimfashion">
+        <ion-label>Muslim Fashion</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="appliances">
+        <ion-label>Appliances</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="footwear">
+        <ion-label>Footwear</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="menswear">
+        <ion-label>Menswear</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="baby">
+        <ion-label>Baby</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="sports">
+        <ion-label>Sports</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-scroll>
+
+  <div [ngSwitch]="selectedSegment">
+    <div *ngSwitchCase="'all'">
+      <ion-slides pager="true">
+        <ion-slide>
+          <ion-grid columns="2" class="ion-no-padding">
+            <ion-row>
+              <ion-col size="6" *ngFor="let item of featuredProducts">
+                <ion-card class="featured-cards" >
+                  <img [src]="item.image" alt="{{item.title}}">
+                  <ion-card-content class="featured">
+                    <p class="item-title">{{ item.title }}</p>
+                    <p class="item-price">{{ item.price }}</p>
+                    <!-- <p>lalala</p>
+                    <p>dududu</p> -->
+                  </ion-card-content>
+                </ion-card>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-slide>
+      </ion-slides>
+    </div>
+
+    <div *ngSwitchCase="'beauty'">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>New customer offer</ion-card-title>
+        </ion-card-header>
+        <ion-grid>
+          <ion-row>
+            <ion-col *ngFor="let item of newCustomerOffers" size="3">
+              <ion-card class="individual-cards">
+                <img [src]="item.image" alt="{{item.title}}">
+                <ion-card-content>
+                  <p>{{ item.price }}</p>
+                </ion-card-content>
+              </ion-card>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card>
+    </div>
+
+    <div *ngSwitchCase="'toys'">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Flash sale</ion-card-title>
+          <ion-badge id="timer">
+            <span id="hour">24</span>
+            <span id="minute">00</span>
+            <span id="second">00</span>
+          </ion-badge>
+        </ion-card-header>
+        <ion-grid>
+          <ion-row>
+            <ion-col *ngFor="let item of flashSales" size="3">
+              <ion-card class="individual-cards">
+                <img [src]="item.image" alt="{{item.title}}">
+                <ion-card-content>
+                  <p>{{ item.price }}</p>
+                </ion-card-content>
+              </ion-card>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card>
+    </div>
+  </div>
+
+</ion-content>
+
+<ion-footer>
+  <ion-tab-bar>
+    <ion-tab-button tab="home">
+      <ion-icon name="home-outline"></ion-icon>
+      <ion-label>Home</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="shop">
+      <ion-icon name="bag"></ion-icon>
+      <ion-label>Shop</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="post">
+      <ion-icon name="add-circle-outline"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button tab="inbox">
+      <ion-icon name="chatbox-outline"></ion-icon>
+      <ion-label>Inbox</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="profile">
+      <ion-icon name="person-outline"></ion-icon>
+      <ion-label>Profile</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-footer>

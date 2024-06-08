@@ -1,0 +1,152 @@
+ion-header {
+    --background: #ff7d7d;
+  }
+  
+  ion-toolbar {
+    --background: #ff7d7d;
+  }
+  
+  .offer-banner {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #fff;
+  }
+  
+  .offer-item {
+    flex: 1;
+    text-align: center;
+    font-size: 14px;
+  }
+  
+  .offer-button {
+    margin-left: 10px;
+  }
+
+  ion-card-header {
+    position: relative;
+    margin-bottom: 0px;
+  }
+
+  ion-card {
+    margin: 10px;
+    text-align: center;
+  }
+
+  .individual-cards {
+    margin: 2px;
+    text-align: center;
+    box-shadow: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .individual-cards img {
+    border-radius: 5px;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+  
+  ion-card-title {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: left;
+    font-family: 'Proxima Nova Bold', sans-serif;
+  }
+  
+  ion-card-content {
+    height: 5vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  ion-grid {
+    --ion-grid-padding: 0;
+  }
+  
+  ion-row {
+    --ion-grid-padding: 0;
+  }
+  
+  ion-col {
+    padding: 5px;
+  }
+
+  #colon {
+    color: black;
+    font-weight: bold;
+  }
+  
+  #timer {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+  }
+  
+  #timer span {
+    background-color: black;
+    color: white;
+    padding: 2px 5px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: 'Proxima Nova Bold', sans-serif;
+  }
+
+  ion-scroll ::-webkit-scrollbar {
+    display: none;
+  }
+
+  ion-tab-button[aria-selected="true"] {
+    border: 2px solid #488aff;
+    border-radius: 5px;
+  }
+
+  .featured-cards {
+    margin: 2px;
+    text-align: center;
+    box-shadow: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .featured-cards img {
+    border-radius: 5px;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  .featured-cards .featured {
+    height: 70px;
+    text-align: left;
+    align-items: flex-start;
+  }
+  
+  .featured-cards .featured .item-title {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: left;
+  }
+  
+  .featured-cards .featured .item-price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #FF69B4;
+  }
+
+  .featured-cards .featured {
+    text-align: left;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
